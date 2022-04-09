@@ -1,6 +1,7 @@
 package keglister.dao;
 
 import com.mysql.cj.jdbc.Driver;
+import keglister.controllers.Config;
 import keglister.models.User;
 
 import java.sql.*;
