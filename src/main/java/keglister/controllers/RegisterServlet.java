@@ -1,5 +1,8 @@
 package keglister.controllers;
 
+import keglister.dao.DaoFactory;
+import keglister.models.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
