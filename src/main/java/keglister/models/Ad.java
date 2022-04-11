@@ -3,21 +3,24 @@ package keglister.models;
 public class Ad {
     private long id;
     private long userId;
+    private long infoId;
     private String name;
-    private String address;
-    private String city;
-    private String state;
-    private String zip;
-    private String website;
 
-    public Ad(long userId, String name, String address, String city, String state, String zip, String website) {
+    public Ad(long userId, String name, long infoId) {
         this.userId = userId;
         this.name = name;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zip = zip;
-        this.website = website;
+        this.infoId = infoId;
+    }
+
+    public Ad(long id, long user_id, String title, String description) {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public long getId() {
@@ -36,51 +39,11 @@ public class Ad {
         this.userId = userId;
     }
 
-    public String getName() {
-        return name;
+    public long getInfoId() {
+        return infoId;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getZip() {
-        return zip;
-    }
-
-    public void setZip(String zip) {
-        this.zip = zip;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
+    public void setInfoId(long infoId) {
+        this.infoId = infoId;
     }
 }
