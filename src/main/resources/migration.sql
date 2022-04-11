@@ -22,22 +22,6 @@ create table ad_categories
         foreign key (category_id) references beer_categories (id)
 );
 
-create table brewery_info
-(
-    id      int unsigned auto_increment,
-    address varchar(200) not null,
-    city    varchar(250) not null,
-    state   varchar(30)  not null,
-    zip     varchar(20)  not null,
-    image   text         null,
-    website text         null,
-    constraint brewery_info_pk
-        unique (id)
-);
-
-alter table brewery_info
-    add primary key (id);
-
 create table users
 (
     id       int unsigned auto_increment,
@@ -53,19 +37,22 @@ alter table users
 
 create table ads
 (
-    id      int unsigned auto_increment,
-    user_id int unsigned not null,
-    name    varchar(200) not null,
-    info_id int unsigned not null,
+    id          int unsigned auto_increment,
+    user_id     int unsigned not null,
+    name        varchar(200) not null,
+    address     varchar(500) not null,
+    website     varchar(100) not null,
+    image       varchar(100) null,
+    food_served tinyint(1)   not null,
     constraint ads_pk
         unique (id),
-    constraint info___fk
-        foreign key (info_id) references brewery_info (id),
     constraint userid___fk
         foreign key (user_id) references users (id)
 );
 
 alter table ads
     add primary key (id);
+
+
 
 
