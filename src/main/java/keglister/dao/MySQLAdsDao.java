@@ -39,11 +39,15 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO keglister_db.ads(user_id, name, address) VALUES (?, ?, ?)";
+            String insertQuery = "INSERT INTO keglister_db.ads(user_id, name, address, website, phone, image, type) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getName());
             stmt.setString(3, ad.getAddress());
+            stmt.setString(4, ad.getWebsite());
+            stmt.setString(5, ad.getPhone());
+            stmt.setString(6, ad.getImage());
+            stmt.setString(7, ad.getType());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();

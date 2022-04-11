@@ -10,6 +10,10 @@
     <h1>Create a new Ad</h1>
     <form action="/ads/create" method="post">
         <div class="form-group">
+            <label for="user_id">User ID</label>
+            <input id="user_id" name="user_id" class="form-control" type="number">
+        </div>
+        <div class="form-group">
             <label for="name">Brewery Name</label>
             <input id="name" name="name" class="form-control" type="text">
         </div>
@@ -32,7 +36,6 @@
         <div class="form-group">
             <br>
             <label>Select Type</label>
-<%--            <input id="type" name="imageURL" class="form-control" type="text">--%>
             <select>
                 <option name="Brewpub">Brewpub</option>
                 <option name="Taproom">Taproom</option>
