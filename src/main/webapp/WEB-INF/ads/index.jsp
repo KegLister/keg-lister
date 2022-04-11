@@ -16,6 +16,9 @@
                 <p class="fs-4">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup
                     Sirius Cohort</p>
                 <a class="btn btn-primary btn-lg" href="/register">Create an account</a>
+                <br>
+                <br>
+                <a class="btn btn-primary btn-lg" href="/ads/create">Add a Brewery</a>
             </div>
         </div>
     </div>
