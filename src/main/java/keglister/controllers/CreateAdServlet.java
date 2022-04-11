@@ -15,8 +15,15 @@ import java.io.IOException;
 @WebServlet(name = "CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-                .forward(request, response);
+        HttpSession session = request.getSession(false);
+        if (session.getAttribute("user") != null){
+            User user = (User) session.getAttribute("user");
+            request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
+                    .forward(request, response);
+        }else {
+            response.sendRedirect("/login");
+        }
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
@@ -26,7 +33,11 @@ public class CreateAdServlet extends HttpServlet {
             Ad ad = new Ad(
                     user.getId(),
                     request.getParameter("name"),
-                    request.getParameter("address")
+                    request.getParameter("address"),
+                    request.getParameter("website"),
+                    request.getParameter("phone"),
+                    request.getParameter("image URL"),
+                    request.getParameter("type")
             );
             DaoFactory.getAdsDao().insert(ad);
             response.sendRedirect("/ads");
