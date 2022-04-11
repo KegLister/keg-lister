@@ -10,12 +10,24 @@
     <h1>Create a new Ad</h1>
     <form action="/ads/create" method="post">
         <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text">
+            <label for="name">Brewery Name</label>
+            <input id="name" name="name" class="form-control" type="text">
         </div>
         <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text"></textarea>
+            <label for="address">Address</label>
+            <input id="address" name="address" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="city">City</label>
+            <input id="city" name="city" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="state">State</label>
+            <input id="state" name="state" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+            <label for="zip">Zip Code</label>
+            <input id="zip" name="zip" class="form-control" type="text">
         </div>
         <input type="submit" class="btn btn-block btn-primary">
     </form>
