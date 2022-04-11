@@ -5,6 +5,7 @@ public class Ad {
     private long userId;
     private String name;
     private String address;
+<<<<<<< HEAD
     private String website;
     private String image;
     private String food_served;
@@ -29,6 +30,22 @@ public class Ad {
         this.id = id;
         this.name = name;
         this.address = address;
+=======
+    private String city;
+    private String state;
+    private String zip;
+
+    public Ad(long userId, String name, String address, String city, String state, String zip) {
+        this.userId = userId;
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+    }
+
+    public Ad(long id, long user_id, String title, String description) {
+>>>>>>> 8272e3e69e53c58c3033955109c2c9a74a47933e
     }
 
     public long getId() {
@@ -63,6 +80,7 @@ public class Ad {
         this.address = address;
     }
 
+<<<<<<< HEAD
     public String getWebsite() {
         return website;
     }
@@ -85,5 +103,29 @@ public class Ad {
 
     public void setFood_served(String food_served) {
         this.food_served = food_served;
+=======
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZip() {
+        return zip;
+    }
+
+    public void setZip(String zip) {
+        this.zip = zip;
+>>>>>>> 8272e3e69e53c58c3033955109c2c9a74a47933e
     }
 }
