@@ -26,7 +26,3 @@ create table ads
     constraint ads_pk unique (id),
     constraint userid___fk foreign key (user_id) references users (id),
     primary key (id));
-
-
-
-
