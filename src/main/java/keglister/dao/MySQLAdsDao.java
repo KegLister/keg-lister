@@ -55,18 +55,21 @@ public class MySQLAdsDao implements Ads {
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
-                rs.getLong("id"),
                 rs.getLong("user_id"),
                 rs.getString("name"),
                 rs.getString("address")
         );
     }
 
-    private List<Ad> createAdsFromResults(ResultSet rs) throws SQLException {
-        List<Ad> ads = new ArrayList<>();
-        while (rs.next()) {
-            ads.add(extractAd(rs));
+    private List<Ad> createAdsFromResults(ResultSet rs) {
+        try {
+            List<Ad> ads = new ArrayList<>();
+            while (rs.next()) {
+                ads.add(extractAd(rs));
+            }
+            return ads;
+        }catch(SQLException e){
+            throw new RuntimeException("Error creating ad", e);
         }
-        return ads;
     }
 }
