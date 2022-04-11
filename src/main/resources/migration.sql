@@ -43,9 +43,7 @@ create table ads
     address     varchar(500) not null,
     website     varchar(100) not null,
     phone       varchar(100),
-    email       varchar(50),
     image       varchar(100) null,
-    food_served tinyint(1)   not null,
     constraint ads_pk
         unique (id),
     constraint userid___fk
