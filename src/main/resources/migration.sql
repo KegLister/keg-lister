@@ -1,22 +1,30 @@
-USE keglister_db;
+DROP DATABASE IF EXISTS keglister_db;
 
-create table IF NOT EXISTS beer_categories
+CREATE DATABASE keglister_db;
+Use keglister_db;
+
+create table beer_categories
 (
-    id        int          not null,
+    id        int unsigned auto_increment,
     beer_type varchar(200) not null,
     constraint beer_categories_pk
         unique (id)
 );
-create table IF NOT EXISTS ad_categories
+
+alter table beer_categories
+    add primary key (id);
+
+create table ad_categories
 (
-    ad_id       int null,
-    category_id int null,
+    ad_id       int          null,
+    category_id int unsigned null,
     constraint ad_categories_beer_categories_id_fk
         foreign key (category_id) references beer_categories (id)
 );
-create table IF NOT EXISTS brewery_info
+
+create table brewery_info
 (
-    id      int          null,
+    id      int unsigned auto_increment,
     address varchar(200) not null,
     city    varchar(250) not null,
     state   varchar(30)  not null,
@@ -26,25 +34,38 @@ create table IF NOT EXISTS brewery_info
     constraint brewery_info_pk
         unique (id)
 );
-create table IF NOT EXISTS users
+
+alter table brewery_info
+    add primary key (id);
+
+create table users
 (
-    id       int          null,
+    id       int unsigned auto_increment,
     username varchar(100) not null,
     email    varchar(250) not null,
     password varchar(250) not null,
     constraint users_pk
         unique (id)
 );
-create table IF NOT EXISTS ads
+
+alter table users
+    add primary key (id);
+
+create table ads
 (
-    id      int          null,
-    user_id int          not null,
+    id      int unsigned auto_increment,
+    user_id int unsigned not null,
     name    varchar(200) not null,
-    info_id int          null,
+    info_id int unsigned not null,
     constraint ads_pk
         unique (id),
-    constraint ads_brewery_info_id_fk
+    constraint info___fk
         foreign key (info_id) references brewery_info (id),
-    constraint ads_users_id_fk
+    constraint userid___fk
         foreign key (user_id) references users (id)
 );
+
+alter table ads
+    add primary key (id);
+
+
