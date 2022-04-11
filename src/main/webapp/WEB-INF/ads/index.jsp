@@ -3,26 +3,51 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing All The Ads" />
+        <jsp:param name="title" value="Viewing All The Ads"/>
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
-<div class="container">
-    <h1>Here Are all the ads!</h1>
-
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.name}</h2>
-            <p>${ad.address}</p>
-            <p>${ad.website}</p>
-            <p>${ad.phone}</p>
-            <p>${ad.image}</p>
-            <p>${ad.type}</p>
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<header class="py-5">
+    <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+            <div class="m-4 m-lg-5">
+                <h1 class="display-5 fw-bold">Welcome to Keg-Lister!</h1>
+                <p class="fs-4">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup
+                    Sirius Cohort</p>
+                <a class="btn btn-primary btn-lg" href="/register">Create an account</a>
+            </div>
         </div>
-    </c:forEach>
-</div>
+    </div>
+</header>
+<section class="pt-4">
+    <div class="container px-lg-5">
+        <!-- Page Features-->
+        <div class="row gx-lg-5">
+            <c:forEach var="ad" items="${ads}">
+                <div class="col-lg-6 col-xxl-4 mb-5">
+                    <div class="card bg-light border-0 h-100">
+                        <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
+                            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
+                                    class="bi bi-cup-straw"></i></div>
+                            <h2 class="fs-4 fw-bold">${ad.name}</h2>
+                            <p class="mb-0">${ad.address}</p>
+                            <a href="${ad.website}">${ad.name} Website</a>
+                            <p>${ad.phone}</p>
+                            <div>
+                                <img src="${ad.image}" class="img-fluid">
+                            </div>
+                            <p>${ad.type}</p>
+                        </div>
+                    </div>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+</section>
+<jsp:include page="/WEB-INF/partials/footer.jsp"/>
 
+<!-- Core theme JS-->
+<script src="../../js/scripts.js"></script>
 </body>
 </html>
