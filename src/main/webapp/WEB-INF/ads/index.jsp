@@ -16,6 +16,9 @@
         <div class="col-md-6">
             <h2>${ad.name}</h2>
             <p>${ad.address}</p>
+            <p>${ad.website}</p>
+            <p>${ad.image}</p>
+            <p>${ad.food_served}</p>
         </div>
     </c:forEach>
 </div>

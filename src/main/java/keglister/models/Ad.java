@@ -22,6 +22,15 @@ public class Ad {
         this.address = address;
     }
 
+    public Ad(long userId, String name, String address, String website, String image, String food_served) {
+        this.userId = userId;
+        this.name = name;
+        this.address = address;
+        this.website = website;
+        this.image = image;
+        this.food_served = food_served;
+    }
+
     public long getId() {
         return id;
     }
