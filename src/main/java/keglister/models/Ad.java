@@ -6,8 +6,9 @@ public class Ad {
     private String name;
     private String address;
     private String website;
+    private String phone;
     private String image;
-    private String food_served;
+    private String type;
 
     public Ad(long id, String name, String address) {
         this.id = id;
@@ -22,13 +23,14 @@ public class Ad {
         this.address = address;
     }
 
-    public Ad(long userId, String name, String address, String website, String image, String food_served) {
+    public Ad(long userId, String name, String address, String website, String phone, String image, String type) {
         this.userId = userId;
         this.name = name;
         this.address = address;
         this.website = website;
+        this.phone = phone;
         this.image = image;
-        this.food_served = food_served;
+        this.type = type;
     }
 
     public long getId() {
@@ -71,6 +73,14 @@ public class Ad {
         this.website = website;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getImage() {
         return image;
     }
@@ -79,11 +89,11 @@ public class Ad {
         this.image = image;
     }
 
-    public String getFood_served() {
-        return food_served;
+    public String getType() {
+        return type;
     }
 
-    public void setFood_served(String food_served) {
-        this.food_served = food_served;
+    public void setType(String type) {
+        this.type = type;
     }
 }

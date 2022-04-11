@@ -17,8 +17,9 @@
             <h2>${ad.name}</h2>
             <p>${ad.address}</p>
             <p>${ad.website}</p>
+            <p>${ad.phone}</p>
             <p>${ad.image}</p>
-            <p>${ad.food_served}</p>
+            <p>${ad.type}</p>
         </div>
     </c:forEach>
 </div>
