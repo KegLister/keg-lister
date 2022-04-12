@@ -11,6 +11,4 @@ public interface Ads {
     Long insert(Ad ad);
     //list of ads that match string
     List<Ad> searchAds(String search);
-    //single ad object from id
-    Ad singleAd(Long ad);
 }
