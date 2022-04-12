@@ -52,6 +52,21 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> searchAds(String search) {
+        PreparedStatement stmt = null;
+        try {
+            String sql = "SELECT * FROM ads WHERE name LIKE ?";
+            String wildcards = "%" + search + "%";
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, wildcards);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching ads.", e);
+        }
+    }
+
+    @Override
     public Long insert(Ad ad) {
         try {
             String insertQuery = "INSERT INTO keglister_db.ads(user_id, name, address, website, phone, image, type) VALUES (?, ?, ?, ?, ?, ?, ?)";
