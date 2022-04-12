@@ -33,6 +33,17 @@ public class Ad {
         this.type = type;
     }
 
+    public Ad(long id, long userId, String name, String address, String website, String phone, String image, String type) {
+        this.id = id;
+        this.userId = userId;
+        this.name = name;
+        this.address = address;
+        this.website = website;
+        this.phone = phone;
+        this.image = image;
+        this.type = type;
+    }
+
     public long getId() {
         return id;
     }
