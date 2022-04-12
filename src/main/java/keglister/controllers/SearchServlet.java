@@ -22,11 +22,7 @@ public class SearchServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String searchString = req.getParameter("search");
-        try {
-            req.setAttribute("ads", DaoFactory.getAdsDao().searchAds(searchString));
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
+        req.setAttribute("ads", DaoFactory.getAdsDao().searchAds(searchString));
         req.setAttribute("searchString", searchString);
         req.getRequestDispatcher("/WEB-INF/ads/search.jsp").forward(req, resp);
     }
