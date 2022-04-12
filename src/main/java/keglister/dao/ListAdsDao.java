@@ -27,12 +27,12 @@ public class ListAdsDao {
     }
 
 
-    @Override
+
     public List<Ad> one(String trimmedQuery) {
         return null;
     }
 
-    @Override
+
     public List<Ad> adsByUser(User id) {
         return null;
     }
