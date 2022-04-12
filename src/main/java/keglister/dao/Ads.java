@@ -1,6 +1,7 @@
 package keglister.dao;
 
 import keglister.models.Ad;
+import keglister.models.User;
 
 import java.util.List;
 
@@ -10,4 +11,6 @@ public interface Ads {
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
     List<Ad> one(String trimmedQuery);
+
+    List<Ad> adsByUser(User id);
 }

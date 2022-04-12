@@ -1,5 +1,8 @@
 package keglister.controllers;
 
+import keglister.dao.DaoFactory;
+import keglister.models.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,6 +17,9 @@ public class ViewProfileServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
         } else {
+            User user = (User)request.getSession().getAttribute("user");
+            request.setAttribute("ads", DaoFactory.getAdsDao().adsByUser(user));
+//            request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
             request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
         }
     }

@@ -3,6 +3,7 @@ package keglister.dao;
 import com.mysql.cj.jdbc.Driver;
 import keglister.controllers.Config;
 import keglister.models.Ad;
+import keglister.models.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -44,6 +45,21 @@ public class MySQLAdsDao implements Ads {
             String wildcards = "%" + name + "%";
             stmt = connection.prepareStatement(sql);
             stmt.setString(1, wildcards);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    public List<Ad> adsByUser(User user) {
+        PreparedStatement stmt = null;
+        try {
+            String sql = "SELECT * FROM ads WHERE user_id = ?";
+
+            String idString = "" + user.getId();
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, idString);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
         } catch (SQLException e) {

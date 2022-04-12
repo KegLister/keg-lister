@@ -1,6 +1,7 @@
 package keglister.dao;
 
 import keglister.models.Ad;
+import keglister.models.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,11 @@ public class ListAdsDao implements Ads {
 
     @Override
     public List<Ad> one(String trimmedQuery) {
+        return null;
+    }
+
+    @Override
+    public List<Ad> adsByUser(User id) {
         return null;
     }
 
