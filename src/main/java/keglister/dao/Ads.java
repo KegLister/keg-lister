@@ -1,6 +1,7 @@
 package keglister.dao;
 
 import keglister.models.Ad;
+import keglister.models.User;
 
 import java.util.List;
 
@@ -14,5 +15,8 @@ public interface Ads {
     List<Ad> searchAds(String search);
 
     List<Ad> one(String trimmedQuery);
+
+
+    List<Ad> adsByUser(User id);
 
 }
