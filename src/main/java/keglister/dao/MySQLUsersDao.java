@@ -1,9 +1,11 @@
 package keglister.dao;
 
+import com.mysql.cj.Session;
 import com.mysql.cj.jdbc.Driver;
 import keglister.controllers.Config;
 import keglister.models.User;
 
+import java.awt.*;
 import java.sql.*;
 
 public class MySQLUsersDao implements Users {

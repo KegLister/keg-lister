@@ -36,6 +36,21 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+    public List<Ad> one(String name) {
+        PreparedStatement stmt = null;
+        try {
+            String sql = "SELECT * FROM ads WHERE name LIKE ?";
+            String wildcards = "%" + name + "%";
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, wildcards);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
     @Override
     public Long insert(Ad ad) {
         try {
