@@ -38,15 +38,16 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public List<Ad> searchAds(String search) {
+        PreparedStatement stmt = null;
         try {
-            List<Ad> adList = new ArrayList<>();
-            String searchQuery = "SELECT * FROM ads WHERE name LIKE ?";
-            PreparedStatement stmt = connection.prepareStatement(searchQuery);
-            stmt.setString(1, "%" + search + "%");
+            String sql = "SELECT * FROM ads WHERE name LIKE ?";
+            String wildcards = "%" + search + "%";
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, wildcards);
             ResultSet rs = stmt.executeQuery();
             return createAdsFromResults(rs);
-        } catch (SQLException e){
-            throw new RuntimeException("Error searching for post", e);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching ads.", e);
         }
     }
 

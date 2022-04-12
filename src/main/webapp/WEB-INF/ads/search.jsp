@@ -21,9 +21,10 @@
                 <a class="btn btn-primary btn-lg" href="/ads/create">Add a Brewery</a>
                 <br>
                 <br>
-                <form class="d-flex">
-                    <input class="form-control me-2 bg-light" type="search" name="search" placeholder="Search for a Brewery" aria-label="Search">
-                    <button class="btn btn-primary" type="submit">Search</button>
+                <form class="form-inline my-2 my-lg-0" action="/search" method="post">
+                    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search"
+                           aria-label="Search">
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
                 </form>
             </div>
         </div>
