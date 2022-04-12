@@ -8,32 +8,11 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-<header class="py-5">
-    <div class="container px-lg-5">
-        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
-            <div class="m-4 m-lg-5">
-                <h1 class="display-5 fw-bold">Welcome to Keg-Lister!</h1>
-                <p class="fs-4">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup
-                    Sirius Cohort</p>
-                <a class="btn btn-primary btn-lg" href="/register">Create an account</a>
-                <br>
-                <br>
-                <a class="btn btn-primary btn-lg" href="/ads/create">Add a Brewery</a>
-                <br>
-                <br>
-                <form class="form-inline my-2 my-lg-0" action="/search" method="post">
-                    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search"
-                           aria-label="Search">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</header>
+Showing clicked ad:
 <section class="pt-4">
     <div class="container px-lg-5">
         <!-- Page Features-->
-        <div class="row gx-lg-5">
+        <div class="row gx-lg-5 justify-content-center">
             <c:forEach var="ad" items="${ads}">
 
                 <div class="col-lg-6 col-xxl-4 mb-5">
@@ -52,7 +31,6 @@
                         </div>
                     </div>
                 </div>
-
             </c:forEach>
         </div>
     </div>
