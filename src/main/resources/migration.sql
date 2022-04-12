@@ -4,7 +4,7 @@ Use keglister_db;
 create table users
 (
     id       int unsigned auto_increment,
-    username varchar(100) not null,
+    username varchar(100) not null unique,
     email    varchar(250) not null,
     password varchar(250) not null,
     constraint users_pk unique (id),
