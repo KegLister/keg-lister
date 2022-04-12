@@ -6,7 +6,7 @@ import keglister.models.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListAdsDao implements Ads {
+public class ListAdsDao {
     private List<Ad> ads;
 
     public List<Ad> all() {
@@ -26,6 +26,7 @@ public class ListAdsDao implements Ads {
         return ad.getId();
     }
 
+
     @Override
     public List<Ad> one(String trimmedQuery) {
         return null;
@@ -35,6 +36,7 @@ public class ListAdsDao implements Ads {
     public List<Ad> adsByUser(User id) {
         return null;
     }
+
 
     private List<Ad> generateAds() {
         List<Ad> ads = new ArrayList<>();
