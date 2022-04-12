@@ -68,6 +68,19 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public void delete(long id) {
+        PreparedStatement stmt = null;
+        try {
+            String sql = "DELETE FROM ads WHERE id = ?";
+            stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public List<Ad> searchAds(String search) {
         PreparedStatement stmt = null;
         try {
@@ -105,6 +118,7 @@ public class MySQLAdsDao implements Ads {
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
+                rs.getLong("id"),
                 rs.getLong("user_id"),
                 rs.getString("name"),
                 rs.getString("address"),
