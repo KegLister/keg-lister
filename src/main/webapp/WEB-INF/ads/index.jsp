@@ -19,6 +19,12 @@
                 <br>
                 <br>
                 <a class="btn btn-primary btn-lg" href="/ads/create">Add a Brewery</a>
+                <br>
+                <br>
+                <form class="d-flex">
+                    <input class="form-control me-2 bg-light" type="search" name="search" placeholder="Search for a Brewery" aria-label="Search">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
             </div>
         </div>
     </div>
