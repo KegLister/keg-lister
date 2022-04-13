@@ -16,23 +16,23 @@
     </div>
     <div class="form-group">
       <label for="name">Brewery Name</label>
-      <input id="name" name="name" class="form-control" type="text" >
+      <input id="name" name="name" value="${ad.name}" class="form-control" type="text" >
     </div>
     <div class="form-group">
       <label for="address">Address</label>
-      <input id="address" name="address" class="form-control" type="text">
+      <input id="address" name="address" value="${ad.address}" class="form-control" type="text">
     </div>
     <div class="form-group">
       <label for="website">Website</label>
-      <input id="website" name="website" class="form-control" type="text">
+      <input id="website" name="website" value="${ad.website}" class="form-control" type="text">
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input id="phone" name="phone" class="form-control" type="text">
+      <input id="phone" name="phone" value="${ad.phone}" class="form-control" type="text">
     </div>
     <div class="form-group">
       <label for="imageURL">Image URL</label>
-      <input id="imageURL" name="imageURL" class="form-control" type="text">
+      <input id="imageURL" name="imageURL" value="${ad.image}" class="form-control" type="text">
     </div>
     <div class="form-group">
       <br>

@@ -90,7 +90,7 @@ public class MySQLAdsDao implements Ads {
         statement.setString(4, ad.getPhone());
         statement.setString(5, ad.getImage());
         statement.setString(6, ad.getType());
-        statement.setLong(7, ad.getUserId());
+        statement.setLong(7, ad.getId());
         statement.executeUpdate();
     }
 
