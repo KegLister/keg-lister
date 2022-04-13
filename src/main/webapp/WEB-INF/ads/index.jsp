@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
@@ -13,9 +14,17 @@
         <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
             <div class="m-4 m-lg-5">
                 <h1 class="display-5 fw-bold">Welcome to Keg-Lister!</h1>
-                <p class="fs-4">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup
-                    Sirius Cohort</p>
+                <p class="fs-4">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup Sirius Cohort</p>
+
+                <c:choose>
+                    <c:when test="${isLoggedIn}">
+                        <a class="btn btn-primary btn-lg" href="/profile">Go to Profile</a>
+                    </c:when>
+                    <c:otherwise>
                 <a class="btn btn-primary btn-lg" href="/register">Create an account</a>
+                    </c:otherwise>
+
+                </c:choose>
                 <br>
                 <br>
                 <a class="btn btn-primary btn-lg" href="/ads/create">Add a Brewery</a>
