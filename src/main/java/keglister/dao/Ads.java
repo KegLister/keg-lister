@@ -22,7 +22,7 @@ public interface Ads {
 
     void delete(long id);
 
-    void edit(Ad ad);
+    void edit(Ad ad) throws SQLException;
 
     Object getAdById(long id) throws SQLException;
 }

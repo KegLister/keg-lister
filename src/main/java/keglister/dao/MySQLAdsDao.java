@@ -81,8 +81,17 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public void edit(Ad ad) {
-
+    public void edit(Ad ad) throws SQLException {
+        String query = "UPDATE ads SET name = ?, address = ?, website = ?, phone = ?, image = ?, type = ? WHERE id = ?;";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, ad.getName());
+        statement.setString(2, ad.getAddress());
+        statement.setString(3, ad.getWebsite());
+        statement.setString(4, ad.getPhone());
+        statement.setString(5, ad.getImage());
+        statement.setString(6, ad.getType());
+        statement.setLong(7, ad.getUserId());
+        statement.executeUpdate();
     }
 
     @Override

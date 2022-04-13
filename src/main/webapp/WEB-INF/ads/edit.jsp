@@ -2,21 +2,21 @@
 <html>
 <head>
   <jsp:include page="/WEB-INF/partials/head.jsp">
-    <jsp:param name="title" value="Create a new Ad" />
+    <jsp:param name="title" value="Edit Your Ad" />
   </jsp:include>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
-  <h1>Create a new Ad</h1>
-  <form action="/ads/edit" method="post">
+  <h1>Edit Your Ad</h1>
+  <form action="/ads/edit/*" method="post">
     <div class="form-group">
       <label for="user_id">User ID</label>
-      <input id="user_id" name="user_id" class="form-control" type="number" value="${ad.user_id}">
+      <input id="user_id" name="user_id" class="form-control" type="number" >
     </div>
     <div class="form-group">
       <label for="name">Brewery Name</label>
-      <input id="name" name="name" class="form-control" type="text" value="${ad.name}">
+      <input id="name" name="name" class="form-control" type="text" >
     </div>
     <div class="form-group">
       <label for="address">Address</label>
