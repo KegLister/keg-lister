@@ -9,13 +9,14 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
   <h1>Edit Your Ad</h1>
-  <form action="/ads/edit/*" method="post">
+  <form action="/ads/edit" method="post">
     <div class="form-group">
       <label for="user_id">User ID</label>
       <input id="user_id" name="user_id" class="form-control" type="number" >
     </div>
     <div class="form-group">
       <label for="name">Brewery Name</label>
+
       <input id="name" name="name" value="${ad.name}" class="form-control" type="text" >
     </div>
     <div class="form-group">
@@ -44,7 +45,7 @@
       </select>
     </div>
     <br>
-    <input type="submit" class="btn btn-block btn-primary">
+    <button type="submit" class="btn btn-block btn-primary" name="id" value="${ad.id}">Submit</button>
   </form>
 </div>
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>
