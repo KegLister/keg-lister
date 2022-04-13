@@ -31,6 +31,8 @@
                                 <img src="${ad.image}" class="img-fluid">
                             </div>
                             <p>${ad.type}</p>
+                            <a href="ads/edit/?id=${ad.id}"
+                               class="btn btn-success">Edit</a>
                             <a href="/ads/delete?id=${ad.id}"
                                onclick="return confirm('Are you sure you want to delete this ad?')"
                                class="btn btn-danger">Delete</a>
