@@ -9,30 +9,30 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
   <h1>Edit Your Ad</h1>
-  <form action="/ads/edit/*" method="post">
+  <form action="/ads/edit" method="post">
     <div class="form-group">
       <label for="user_id">User ID</label>
       <input id="user_id" name="user_id" class="form-control" type="number" >
     </div>
     <div class="form-group">
       <label for="name">Brewery Name</label>
-      <input id="name" name="name" class="form-control" type="text" >
+      <input id="name" name="name" class="form-control" type="text" value="${ad.name}" >
     </div>
     <div class="form-group">
       <label for="address">Address</label>
-      <input id="address" name="address" class="form-control" type="text">
+      <input id="address" name="address" class="form-control" type="text" value="${ad.address}">
     </div>
     <div class="form-group">
       <label for="website">Website</label>
-      <input id="website" name="website" class="form-control" type="text">
+      <input id="website" name="website" class="form-control" type="text" value="${ad.website}">
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input id="phone" name="phone" class="form-control" type="text">
+      <input id="phone" name="phone" class="form-control" type="text" value="${ad.phone}">
     </div>
     <div class="form-group">
       <label for="imageURL">Image URL</label>
-      <input id="imageURL" name="imageURL" class="form-control" type="text">
+      <input id="imageURL" name="imageURL" class="form-control" type="text" value="${ad.image}">
     </div>
     <div class="form-group">
       <br>
@@ -44,7 +44,7 @@
       </select>
     </div>
     <br>
-    <input type="submit" class="btn btn-block btn-primary">
+    <button type="submit" class="btn btn-block btn-primary" name="id" value="${ad.id}">Submit</button>
   </form>
 </div>
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>

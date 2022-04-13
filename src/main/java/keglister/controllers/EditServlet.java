@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(name = "EditServlet", urlPatterns = "/ads/edit/*")
+@WebServlet(name = "EditServlet", urlPatterns = "/ads/edit")
 public class EditServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -31,9 +31,11 @@ public class EditServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id = Integer.parseInt(req.getParameter("id"));
         HttpSession session = req.getSession(false);
         User user = (User) session.getAttribute("user");
         Ad ad = new Ad(
+                id,
                 user.getId(),
                 req.getParameter("name"),
                 req.getParameter("address"),
