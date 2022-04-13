@@ -3,6 +3,7 @@ package keglister.dao;
 import keglister.models.Ad;
 import keglister.models.User;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface Ads {
@@ -21,4 +22,7 @@ public interface Ads {
 
     void delete(long id);
 
+    void edit(Ad ad);
+
+    Object getAdById(long id) throws SQLException;
 }
