@@ -3,11 +3,11 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Your Profile" />
+        <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="container">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
@@ -31,6 +31,11 @@
                                 <img src="${ad.image}" class="img-fluid">
                             </div>
                             <p>${ad.type}</p>
+                            <div>
+                                <a href="https://www.google.com/maps/search/${ad.name}${ad.address}" target="_blank">view on google maps</a>
+                            </div>
+                            <br>
+                            <br>
                             <a href="ads/edit?id=${ad.id}"
                                class="btn btn-success">Edit</a>
                             <a href="/ads/delete?id=${ad.id}"

@@ -28,6 +28,9 @@ Showing category:
                                 <img src="${ad.image}" class="img-fluid">
                             </div>
                             <p>${ad.type}</p>
+                            <div>
+                                <a href="https://www.google.com/maps/search/${ad.name}${ad.address}" target="_blank">view on google maps</a>
+                            </div>
                         </div>
                     </div>
                 </div>
