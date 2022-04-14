@@ -25,7 +25,7 @@
                                     class="bi bi-cup-straw"></i></div>
                             <h2 class="fs-4 fw-bold"><a href="ShowSingleAdServlet?${ad.name}">${ad.name}</a></h2>
                             <p class="mb-0">${ad.address}</p>
-                            <a href="${ad.website}">${ad.name} Website</a>
+                            <a href="${ad.website}" target="_blank">${ad.name} Website</a>
                             <p>${ad.phone}</p>
                             <div>
                                 <img src="${ad.image}" class="img-fluid">

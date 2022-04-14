@@ -50,7 +50,7 @@
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
                                     class="bi bi-cup-straw"></i></div>
-                            <h2 class="fs-4 fw-bold"><a href="ShowSingleAdServlet?${ad.name}">${ad.name}</a></h2>
+                            <h2 class="fs-4 fw-bold"><a href="ShowSingleAdServlet?${ad.name}" target="_blank">${ad.name}</a></h2>
                             <p class="mb-0">${ad.address}</p>
                             <a href="${ad.website}">${ad.name} Website</a>
                             <p>${ad.phone}</p>
