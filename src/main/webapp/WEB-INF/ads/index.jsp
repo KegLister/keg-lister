@@ -14,14 +14,15 @@
         <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
             <div class="m-4 m-lg-5">
                 <h1 class="display-5 fw-bold">Welcome to Keg-Lister!</h1>
-                <p class="fs-4">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup Sirius Cohort</p>
+                <p class="fs-4">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup
+                    Sirius Cohort</p>
 
                 <c:choose>
                     <c:when test="${isLoggedIn}">
                         <a class="btn btn-primary btn-lg" href="/profile">Go to Profile</a>
                     </c:when>
                     <c:otherwise>
-                <a class="btn btn-primary btn-lg" href="/register">Create an account</a>
+                        <a class="btn btn-primary btn-lg" href="/register">Create an account</a>
                     </c:otherwise>
 
                 </c:choose>
@@ -30,10 +31,20 @@
                 <a class="btn btn-primary btn-lg" href="/ads/create">Add a Brewery</a>
                 <br>
                 <br>
-                <form class="form-inline my-2 my-lg-0" action="/search" method="post">
-                    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search"
+                <form class="form-inline my-2 my-lg-0 d-flex" action="/search" method="post">
+                    <input class="form-control mr-sm-2 " name="search" type="search" placeholder="Search"
                            aria-label="Search">
-                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                    <button class="btn btn-lg btn-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+                <br>
+                <form action="/filter" method="post">
+                    <label for="selector">Search By Category</label>
+                    <select id="selector" name="type" class="btn-primary">
+                        <option name="Brewpub">Brewpub</option>
+                        <option name="Taproom">Taproom</option>
+                        <option name="Microbrewery">Microbrewery</option>
+                    </select>
+                    <button class="btn btn-lg btn-primary my-2 my-sm-0" type="submit">Go</button>
                 </form>
             </div>
         </div>
@@ -50,7 +61,8 @@
                         <div class="card-body text-center p-4 p-lg-5 pt-0 pt-lg-0">
                             <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><i
                                     class="bi bi-cup-straw"></i></div>
-                            <h2 class="fs-4 fw-bold"><a href="ShowSingleAdServlet?${ad.name}" target="_blank">${ad.name}</a></h2>
+                            <h2 class="fs-4 fw-bold"><a href="ShowSingleAdServlet?${ad.name}"
+                                                        target="_blank">${ad.name}</a></h2>
                             <p class="mb-0">${ad.address}</p>
                             <a href="${ad.website}">${ad.name} Website</a>
                             <p>${ad.phone}</p>

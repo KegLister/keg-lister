@@ -118,6 +118,21 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> filterAds(String search) {
+        PreparedStatement stmt = null;
+        try {
+            String sql = "SELECT * FROM ads WHERE type LIKE ?";
+            String wildcards = "%" + search + "%";
+            stmt = connection.prepareStatement(sql);
+            stmt.setString(1, wildcards);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error searching ads.", e);
+        }
+    }
+
+    @Override
     public List<Ad> searchAds(String search) {
         PreparedStatement stmt = null;
         try {

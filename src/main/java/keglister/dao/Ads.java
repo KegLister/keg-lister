@@ -25,4 +25,6 @@ public interface Ads {
     void edit(Ad ad) throws SQLException;
 
     Object getAdById(long id) throws SQLException;
+
+    List<Ad> filterAds(String search);
 }
