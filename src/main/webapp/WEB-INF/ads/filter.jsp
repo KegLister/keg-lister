@@ -40,6 +40,10 @@ Showing category:
         </div>
     </div>
 </section>
+<br>
+<br>
+<br>
+<br>
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>
 
 <!-- Core theme JS-->
