@@ -8,8 +8,11 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<br>
+<br>
+<br>
 
-<div class="container">
+<div class="container mt-5">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
 </div>
 <section class="pt-4">

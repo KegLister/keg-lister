@@ -8,6 +8,10 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<br>
+<br>
+<br>
+<br>
 Showing category:
 <section class="pt-4">
     <div class="container px-lg-5">
