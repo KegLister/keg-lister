@@ -12,7 +12,7 @@
 <br>
 <br>
 <br>
-Showing category:
+<h1>Showing category:</h1>
 <section class="pt-4">
     <div class="container px-lg-5">
         <!-- Page Features-->
