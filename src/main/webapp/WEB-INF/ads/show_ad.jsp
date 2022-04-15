@@ -8,7 +8,11 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-Showing clicked ad:
+<br>
+<br>
+<br>
+<br>
+<h1 class="title">Showing clicked ad:</h1>
 <section class="pt-4">
     <div class="container px-lg-5">
         <!-- Page Features-->
