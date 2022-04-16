@@ -14,6 +14,9 @@
 
 <div class="container mt-5">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
+    <a href="ads/edit?id=${ad.user_id}"
+       class="btn btn-success">Edit Profile</a>
+
 </div>
 <section class="pt-4">
     <div class="container px-lg-5">
@@ -43,7 +46,7 @@
                             <br>
                             <a href="ads/edit?id=${ad.id}"
                                class="btn btn-success">Edit</a>
-                            <a href="/ads/delete?id=${ad.id}"
+                            <a href="ads/delete?id=${ad.id}"
                                onclick="return confirm('Are you sure you want to delete this ad?')"
                                class="btn btn-danger">Delete</a>
                         </div>
