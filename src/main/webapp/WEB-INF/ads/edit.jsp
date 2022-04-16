@@ -7,13 +7,14 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<br>
+<br>
+<br>
+<br>
+<br>
 <div class="container">
   <h1>Edit Your Ad</h1>
   <form action="/ads/edit" method="post">
-    <div class="form-group">
-      <label for="user_id">User ID</label>
-      <input id="user_id" name="user_id" class="form-control" type="number" >
-    </div>
     <div class="form-group">
       <label for="name">Brewery Name</label>
 
