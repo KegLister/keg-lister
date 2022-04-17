@@ -14,8 +14,7 @@
 <br>
 <div class="container">
     <h1>Edit Your Profile</h1>
-    <form action="/edit-profile" method="post">
-        <h2>Welcome!</h2>
+    <form action="/ads/edit-profile" method="post">
         <h3>please enter your information below</h3>
         <br>
         <div class="form-outline mb-4">
@@ -34,7 +33,7 @@
             <input type="password" placeholder="Confirm Password" value="${user.password}" name="confirm_password" required
                    class="form-control"/>
         </div>
-        <button type="submit" class="btn btn-primary btn-block mb-4">Register Account</button>
+        <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
     </form>
 </div>
 <jsp:include page="/WEB-INF/partials/footer.jsp"/>

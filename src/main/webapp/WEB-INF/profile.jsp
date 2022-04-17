@@ -14,7 +14,7 @@
 
 <div class="container mt-5">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
-    <a href="ads/edit?id=${ad.user_id}"
+    <a href="ads/edit-profile"
        class="btn btn-success">Edit Profile</a>
 
 </div>
