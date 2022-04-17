@@ -18,13 +18,7 @@ import java.util.List;
 public class EditProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long id = Long.parseLong(req.getParameter("user_id"));
 
-        try {
-            req.setAttribute("ad", DaoFactory.getAdsDao().getAdById(id));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
         req.getRequestDispatcher("/WEB-INF/ads/edit_profile.jsp").forward(req, resp);
 
     }

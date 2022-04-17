@@ -14,8 +14,7 @@
 <br>
 <div class="container">
     <h1>Edit Your Profile</h1>
-    <form action="/edit-profile" method="post">
-        <h2>Welcome!</h2>
+    <form action="ads/edit-profile" method="post">
         <h3>please enter your information below</h3>
         <br>
         <div class="form-outline mb-4">
