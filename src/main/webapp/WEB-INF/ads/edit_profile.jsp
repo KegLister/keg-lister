@@ -18,19 +18,23 @@
         <h3>please enter your information below</h3>
         <br>
         <div class="form-outline mb-4">
-            <input type="text" placeholder="Enter Username" value="${user.username}" name="username" required
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter Username" value="${user.username}" name="username" id="username" required
                    class="form-control"/>
         </div>
         <div class="form-outline mb-4">
-            <input type="email" placeholder="Enter Email" value="${user.email}" name="email" required
+            <label for="email">Email</label>
+            <input type="email" placeholder="Enter Email" value="${user.email}" name="email" id="email" required
                    class="form-control"/>
         </div>
         <div class="form-outline mb-4">
-            <input type="password" placeholder="Enter Password" value="${user.password}" name="password" required
+            <label for="password">Password</label>
+            <input type="password" placeholder="Enter Password" value="${user.password}" name="password" id="password" required
                    class="form-control"/>
         </div>
         <div class="form-outline mb-4">
-            <input type="password" placeholder="Confirm Password" value="${user.password}" name="confirm_password" required
+            <label for="cpassword">Confirm password</label>
+            <input type="password" placeholder="Confirm Password" value="${user.password}" name="confirm_password" id="cpassword" required
                    class="form-control"/>
         </div>
         <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
