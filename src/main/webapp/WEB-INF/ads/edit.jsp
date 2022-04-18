@@ -39,7 +39,7 @@
     <div class="form-group">
       <br>
       <label>Select Type</label>
-      <select>
+      <select name="type">
         <option name="Brewpub">Brewpub</option>
         <option name="Taproom">Taproom</option>
         <option name="Microbrewery">Microbrewery</option>
